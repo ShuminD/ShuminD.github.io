@@ -1,70 +1,37 @@
 ---
 layout: default
 ---
-<div class="footer-clear post-wrapper">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <!-- post archive trigger -->
-  <div class="post-archive-trigger">
-    <div class="post-archive-icon"></div>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline"><a class="post-title-link"  href="{{page.url}}">{{ page.title }}</a></h1>
+  <center>  <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></p>
+    {% if page.author %}
+     <div class="">
+       <center><p ><strong><span class="authorKeyword">Author</span><span class="small-site-title"> <h2 style="letter-spacing: 3px !important;
+       text-transform: uppercase !important;">{{page.author}}</h2></span></strong></p></center>
 
-  <!-- post archive -->
-  <div class="post-archive">
-    <div class="post-archive-iterms">
-      {% for post in site.posts %}
-      {% if page.url == post.url %}
-      {% assign status = 'checked' %}
-      {% else %}
-      {% assign status = '' %}
-      {% endif %}
-      <a class="post-archive-iterm" href="{{ post.url }}">
-        <span class="post-archive-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        <span class="post-archive-title {{ status }}">{{ post.title }}</span>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
+     </div>
+     {% endif %}
+   </center>
+  </header>
 
-  <!-- post header -->
-  <div class="post-header">
-    <h1>{{ page.title }}</h1>
-    <span>{{ page.date | date: "%Y-%m-%d" }}</span>
-  </div>
-
-  <!-- post content -->
-  {% if page.tags contains 'chinese' %}
-  {% assign type = 'chinese' %}
-  {% else %}
-  {% assign type = 'english' %}
-  {% endif %}
-
-  <div class="post-content {{ type }}">
+  <div class="post-content" itemprop="articleBody">
     {{ content }}
   </div>
 
-  <!-- post navigator -->
-  <div class="post-nav">
-    {% if page.previous %}
-    <a class="post-nav-previous"href="{{ page.previous.url }}">{{ page.previous.title }}</a>
-    {% endif %}
-
-    {% if page.previous and page.next %}
-    <div class="post-nav-sep"></div>
-    {% endif %}
-
-    {% if page.next %}
-    <a class="post-nav-next" href="{{ page.next.url }}">{{ page.next.title }}</a>
-    {% endif %}
-  </div>
-
-  <!-- disqus comment system -->
-  {% if site.disqus_shortname != '' %}
-  <div class="post-comment">
-    {% include disqus.html %}
-  </div>
+  <footer class="postNavigation">
+  {% if page.previous.url %}
+    <a class="postPrev" href="{{page.previous.url}}">
+        &laquo; {{page.previous.title}}
+    </a>
   {% endif %}
+  {% if page.next.url %}
+    <a class="postNext" href="{{page.next.url}}">
+        {{page.next.title}} &raquo;
+    </a>
+  {% endif %}
+  </footer>
 
-  <!-- footer -->
-  {% include footer.html %}
 
-</div>
+</article>
