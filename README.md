@@ -1,67 +1,37 @@
-Book
-====
+## Welcome to GitHub Pages
 
-Book, a simple Jekyll theme. [Demo](http://kkninjae.github.io/book/)
+You can use the [editor on GitHub](https://github.com/ShuminD/ShuminD.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-### Screenshots
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-![](http://kkninjae.github.io/book/assets/img/mobile.jpg)
+### Markdown
 
-![](http://kkninjae.github.io/book/assets/img/desktop.jpg)
+Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-![](http://kkninjae.github.io/book/assets/img/404.jpg)
+```markdown
+Syntax highlighted code block
 
-### Features
+# Header 1
+## Header 2
+### Header 3
 
-* Responsive layout and mobile first
-* Customized [404](http://kkninjae.github.io/book/hehe) page
-* Footer link is the back-home link
+- Bulleted
+- List
 
-### Get started
+1. Numbered
+2. List
 
-1.  fork the [repo](https://github.com/kkninjae/book/fork).
-2.  clone `git clone https://github.com/username/book`
-3.  run `jekyll serve -w`
+**Bold** and _Italic_ and `Code` text
 
-[http://localhost:4000](http://localhost:4000) should be ready.
+[Link](url) and ![Image](src)
+```
 
-Customization
--------------
+For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### _config.yml file
+### Jekyll Themes
 
-* title: site name
-* description: site description
-* url: site url
-* avatar: absolute path of avatar which is a picture (140px * 140px) on the index page.
-* favicon: absolute path of site favicon
-* google_analytics: id for google analystics
-* disqus_shortname: shortname of disque comment system
-* about: content on the about page.
-  you can write more than one paragraph but the format should be like the original one.
-  the special word `?link?` will be replaced by one of the links which are listed under links.
+Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ShuminD/ShuminD.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### warning
+### Support or Contact
 
-Please do not delete the first two lines of style.css file.
-
-End.
-----
-
-If you like it, [star](https://github.com/kkninjae/book) it.
-
-If you have a problem, [github issue is ready](https://github.com/kkninjae/book/issues).
-
-Open Sources
-------------
-
-The following open sources have been used in this project.
-
-* [Google Fonts](https://www.google.com/fonts)
-* [jQuery](https://jquery.com/)
-* [highlight.js](https://highlightjs.org/)
-
-License
--------
-
-[MIT](./LICENSE)
+Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
