@@ -1,74 +1,29 @@
-# Where things are
-source:      .
-destination: ./_site
-plugins_dir:     ./_plugins
-layouts_dir:     ./_layouts
-data_dir: ./_data
-includes_dir: ./_includes
-# collections: null
+title: Book
+description: A simple Jekyll theme
+url: # site url
+avatar: # path/to/avatar for index page. e.g. /assets/img/avatar.jpg
+favicon: # path/to/favicon for site. e.g. /assets/img/favicon.ico
+google_analytics: # google analytics id
+disqus_shortname: # disqus_shortname for disqus comment system
 
-# Handling Reading
-safe:         false
-include:      [".htaccess"]
-exclude:      []
-keep_files:   [".git", ".svn"]
-encoding:     "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+# Content for about page.
+# Each paragraph will be a <p> tag which is inserted to about
+# page. text_align is used to align the text. Default is left.
+# Other two values are center and right. If there are some links
+# in your paragraph, use '?link?' to take the place of a link.
+# And then write the real link under links. name is the link
+# text. url is the link. when external is set as true, then
+# a new whidow will be open when link is clicked.
+#
+about:
+  - paragraph: ?link?, a simple Jekyll theme. Built by ?link?
+    text_align: center
+    links:
+      - name: Book
+        url: https://github.com/kkninjae/book
+        external: true
+      - name: Lang Liu
+        url: http://kkninjae.com/about/
+        external: false
 
-# Filtering Content
-show_drafts: null
-limit_posts: 0
-future:      true
-unpublished: false
-
-# Plugins
-whitelist: []
-gems:      [jekyll-paginate]
-
-# Conversion
-markdown:    kramdown
-highlighter: rouge
-lsi:         false
-excerpt_separator: "\n\n"
-# incremental: false
-
-# Serving
-detach:  false
-port:    4000
-host:    127.0.0.1
-baseurl: "http://jamigibbs.github.io/phantom/" # does not include hostname
-
-# Outputting
-permalink:     date
-paginate:       10
-paginate_path: /page:num
-timezone:      null
-
-quiet:    false
-defaults: []
-
-# Markdown Processors
-rdiscount:
-  extensions: []
-
-redcarpet:
-  extensions: []
-
-kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
-
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
-
-
-include: ['_pages']
+    
