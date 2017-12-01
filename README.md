@@ -1,67 +1,182 @@
-Book
-====
+<p align = "center">
+<img src="http://i.imgur.com/JhbQ03z.png"/>
+</p>
 
-Book, a simple Jekyll theme. [Demo](http://kkninjae.github.io/book/)
+---
 
-### Screenshots
+If there's any issue you are facing in setting up this theme I'm there for you. Just create an issue in this repository (<http://github.com/hemangsk/Gravity>), (<https://help.github.com/articles/creating-an-issue/>) and I'll get back to you asap.
 
-![](http://kkninjae.github.io/book/assets/img/mobile.jpg)
+![Welcome to Gravity](https://user-images.githubusercontent.com/13018570/27043040-778d80cc-4fb6-11e7-8619-de4be626be67.png)
+<img src="http://i.imgur.com/cPwoX3E.png"/>
+<img src="http://i.imgur.com/3TMoBGj.png"/>
+<img src="http://i.imgur.com/Z6h3uCp.png"/>
+<img src="http://i.imgur.com/bB7IIHr.png"/>
 
-![](http://kkninjae.github.io/book/assets/img/desktop.jpg)
+***
 
-![](http://kkninjae.github.io/book/assets/img/404.jpg)
+# INSTALLATION
 
-### Features
+### Dependencies
 
-* Responsive layout and mobile first
-* Customized [404](http://kkninjae.github.io/book/hehe) page
-* Footer link is the back-home link
+Gravity uses Jekyll and it's built-in SCSS compiler for the associated CSS, so the first thing you'll need is Jekyll itself:
 
-### Get started
+```bash
+$ gem install jekyll
+```
 
-1.  fork the [repo](https://github.com/kkninjae/book/fork).
-2.  clone `git clone https://github.com/username/book`
-3.  run `jekyll serve -w`
+In case you don't have the `bundler` gem installed already, you can install it as follows:
 
-[http://localhost:4000](http://localhost:4000) should be ready.
+```bash
+$ gem install bundler
+```
 
-Customization
--------------
+For pagination, Gravity uses the [jekyll-paginate](https://jekyllrb.com/docs/pagination/) gem :
 
-### _config.yml file
+```bash
+$ gem install jekyll-paginate
+```
 
-* title: site name
-* description: site description
-* url: site url
-* avatar: absolute path of avatar which is a picture (140px * 140px) on the index page.
-* favicon: absolute path of site favicon
-* google_analytics: id for google analystics
-* disqus_shortname: shortname of disque comment system
-* about: content on the about page.
-  you can write more than one paragraph but the format should be like the original one.
-  the special word `?link?` will be replaced by one of the links which are listed under links.
+***
 
-### warning
+# USAGE
 
-Please do not delete the first two lines of style.css file.
+Once you have the required gems, you can go ahead and clone the
+[Gravity repository](https://github.com/hemangsk/Gravity) or [download](https://github.com/hemangsk/Gravity/archive/master.zip)
+a zip of the master branch.
 
-End.
-----
+Run :
 
-If you like it, [star](https://github.com/kkninjae/book) it.
+```bash
+$ jekyll serve
+```
 
-If you have a problem, [github issue is ready](https://github.com/kkninjae/book/issues).
+Jekyll should now be generating your content!
 
-Open Sources
-------------
+***
 
-The following open sources have been used in this project.
+# ADDING POSTS
 
-* [Google Fonts](https://www.google.com/fonts)
-* [jQuery](https://jquery.com/)
-* [highlight.js](https://highlightjs.org/)
+The theme by default ships with starter posts located in `_posts/`. Delete these posts and add your content to the `_posts`
+folder to see them being served up by Jekyll. [This](https://jekyllrb.com/docs/posts/) would be a good guide to getting started on writing posts using Jekyll. We've added a concise guide below:
 
-License
--------
+- Create a .markdown file inside `_posts` folder.
+- Name the file according to the format YY-MM-DD-[short name for your post].
+- `2016-03-30-i-love-design.markdown`
+- Write the *Front Matter* and content in the file.
 
-[MIT](./LICENSE)
+### FORMAT
+
+```
+---
+layout: post | default | page
+title: String POST TITLE
+date: Time Stamp
+categories: String | Array of Strings CATEGORY / CATEGORIES
+---
+
+---
+layout: post
+title: "The One with the Blackout"
+date: 2016-03-30 19:45:31 +0530
+categories: ["life", friends]
+---
+```
+
+***
+
+# CREATE PAGES
+
+- Create a .md file in the root directory.
+- Name the file with the desired page link name.
+  `about.md`
+  `design.md`
+- Write the *Front Matter* and content in the file.
+
+### FORMAT
+
+```
+---
+layout: page
+title: String TITLE OF THE WEBPAGE
+permalink: / String / PERMALINK FOR THE WEBPAGE
+tagline: String OPTIONAL GRAVITY FEATURE : TAGLINE FOR THE PAGE
+---
+
+---
+layout: page
+title: "Science"
+permalink: /science/
+tagline: "Humanity is overrated."
+---
+```
+
+***
+
+#### Introducing
+
+# ARCHIVE PAGES
+
+#### You can display a list of all the posts corresponding to a particular category on a standalone page using the `ARCHIVE` layout.
+
+- Create a .md file in the root directory.
+- Name the file. Preferred name will be the name of the category.
+    \*`life.md`
+- Write the *Front Matter* and content in the file.
+
+### FORMAT
+
+```
+---
+layout: archive ARCHIVE PAGE LAYOUT
+title: String TITLE OF THE WEBPAGE
+permalink: / String / PERMALINK FOR THE WEBPAGE
+tagline: String TAGLINE FOR THE PAGE
+category: String NAME OF THE CATEGORY OF WHICH THE PAGE WILL SHOW POSTS
+---
+
+---
+layout: archive
+title: "Design"
+permalink: "Design"
+tagline: "It's all about perception"
+category: "design"
+---
+```
+
+#### DIRECTORY STRUCTURE
+
+```
+├── css                                         # => Output of the combined SASS files
+│   └── style.scss
+├── _includes                                   # => Contains partials that can be used with your layouts
+│   ├── footer.html
+│   ├── header.html
+│   ├── head.html
+│   ├── icon-github.html
+│   ├── icon-github.svg
+│   ├── icon-twitter.html
+│   └── icon-twitter.svg
+├── _layouts                                    # => Layout related HTML files
+│   ├── archive.html
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts                                      # => posts, dynamic content. Follow the format: YEAR-MONTH-DAY-title.MARKUP
+│   ├── 2016-03-30-design-stories.markdown
+│   ├── 2016-03-30-science0.markdown
+│   ├── 2016-03-30-science.markdown
+│   └── 2016-03-30-welcome-to-jekyll.markdown
+└── _sass                                       # => SASS partials for styling
+|   ├── _base.scss
+|   ├── _layout.scss
+|   └── _syntax-highlighting.scss
+├── about.md
+├── _config.yml                                 # => Configuration options or flags for your site go here
+├── design.md
+├── download.md
+├── feed.xml
+├── index.html
+├── LICENSE.txt                                 # => Licensing information
+├── README.md
+└── science.md
+```
